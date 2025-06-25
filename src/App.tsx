@@ -1,17 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 import {
+  Image,
+  ImageSourcePropType,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import DiceOne from '../assets/One.png';
+import DiceTwo from '../assets/Two.png';
+import DiceThree from '../assets/Three.png';
+import DiceFour from '../assets/Four.png';
+import DiceFive from '../assets/Five.png';
+import DiceSix from '../assets/Six.png';
 
-function App() {
+type DiceProps = PropsWithChildren<{
+  imageUrl: ImageSourcePropType;
+}>
+
+const Dice = ({ imageUrl }: DiceProps): JSX.Element => {
+  return (
+    <View>
+      <Image source={imageUrl} style={styles.diceImage} />
+    </View>
+  );
+}
+
+function App(): JSX.Element {
 
   return (
     <View>
